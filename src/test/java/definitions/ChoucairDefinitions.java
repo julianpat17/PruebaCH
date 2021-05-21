@@ -17,25 +17,21 @@ public class ChoucairDefinitions {
     @Given("^I open the main page$")
     public void iOpenTheMainPage() {
         choucairPageSteps.iOpenPage();
-
     }
 
     @Given("^I click on the jobs button$")
     public void iClickOnTheJobsButton() {
         choucairPageSteps.clickOnEmpleosButton();
-
     }
 
     @Given("^I click on jobs$")
     public void iClickOnJobs() {
         choucairPageSteps.clickOnSerCHButton();
-
     }
 
     @Then("^I look at the available vacancies$")
     public void iLookAtTheAvailableVacancies() {
         choucairPageSteps.clickOnConvocatorias();
-
     }
 
     @Then("^write the name of the vacancy$")
@@ -46,34 +42,27 @@ public class ChoucairDefinitions {
     @Then("^I select the vacancy$")
     public void iselectTheVacancy() {
         choucairPageSteps.aplicarVacante();
-
     }
 
     @Then("^I click on the button apply to vacancy$")
     public void i_ClickOnTheButtonApplyToVacancy() {
         choucairPageSteps.aplicarEmpleoButton();
-
     }
 
-    @Then("^I write my personal information$")
-    public void iWriteMyPersonalInformation() {
-
-        choucairPageSteps.llenarForm();
+    @Then("^I write my personal information (.*)$")
+    public void iWriteMyPersonalInformationNombreCorreoCelularFormacionExperienciaConocimientoAutSalarioDisponibilidadMensajeAdicional(List<String> parameters) {
+        choucairPageSteps.llenarForm(parameters);
     }
 
 
     @Then("^Click on the button submit application$")
     public void clickOnTheButtonSubmitApplication() {
-
+        choucairPageSteps.enviarApli();
     }
 
-    @Then("^Finish the application correctly$")
-    public void finishTheApplicationCorrectly() {
-        choucairPageSteps.verify();
+    @Then("^It checks that the job aplication was fine by following (.*)$")
+    public void itChecksThatTheJobAplicationWasFineByFollowingMessage(String mensajeExito) {
+        choucairPageSteps.verify(mensajeExito);
 
-    }
-
-    @And("^I click on the button apply to vacancy <Nombre>,<Correo>,<Celular>,<Formacion>,<Experiencia>,<ConocimientoAut>,<Salario>,<Disponibilidad>,<MensajeAdicional>$")
-    public void iClickOnTheButtonApplyToVacancyNombreCorreoCelularFormacionExperienciaConocimientoAutSalarioDisponibilidadMensajeAdicional() {
     }
 }

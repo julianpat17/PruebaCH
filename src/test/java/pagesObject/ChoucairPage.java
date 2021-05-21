@@ -8,11 +8,8 @@ import org.openqa.selenium.support.FindBy;
 
 @DefaultUrl("https://www.choucairtesting.com/")
 
-public class ChoucairPage extends PageObject{
+public class ChoucairPage extends PageObject {
 
-    @FindBy (xpath = "//li[@id='menu-item-550']//a[@href='https://www.choucairtesting.com/empleos-testing/']")
+    @FindBy(xpath = "//li[@id='menu-item-550']//a[@href='https://www.choucairtesting.com/empleos-testing/']")
     WebElementFacade buttonEmpleos;
-
-
-
 }
